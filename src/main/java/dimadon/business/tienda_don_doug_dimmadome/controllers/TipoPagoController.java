@@ -15,7 +15,7 @@ import dimadon.business.tienda_don_doug_dimmadome.services.ServiceTipoPago;
 
 @RestController
 @RequestMapping("/tipoPago")
-@CrossOrigin(origins = "https://tienda-don-doug-dimmadome.vercel.app")
+//@CrossOrigin(origins = "https://tienda-don-doug-dimmadome.vercel.app")
 public class TipoPagoController {
 
     @Autowired
