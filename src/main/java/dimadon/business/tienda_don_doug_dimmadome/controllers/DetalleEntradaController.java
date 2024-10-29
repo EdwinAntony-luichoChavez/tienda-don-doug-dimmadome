@@ -14,29 +14,28 @@ import org.springframework.web.bind.annotation.RestController;
 import dimadon.business.tienda_don_doug_dimmadome.entities.DetalleEntrada;
 import dimadon.business.tienda_don_doug_dimmadome.services.ServiceDetalleEntrada;
 
-
 @RestController
 @RequestMapping("/detalleEntrada")
 @CrossOrigin(origins = "https://tienda-don-doug-dimmadome.vercel.app")
 public class DetalleEntradaController {
-    
 
     @Autowired
     ServiceDetalleEntrada serviceDetalleEntrada;
 
     @GetMapping("/obtener")
-    public ArrayList<DetalleEntrada> obtenerDetalleEntrada(){
+    public ArrayList<DetalleEntrada> obtenerDetalleEntrada() {
         return this.serviceDetalleEntrada.obtenerDetalleEntradas();
     }
-   @PostMapping("/guardar")
+
+    @PostMapping("/insertar")
     public ResponseEntity<DetalleEntrada> guardarDetalleEntradas(@RequestBody DetalleEntrada detalleEntrada) {
         DetalleEntrada savedDetalle = serviceDetalleEntrada.guardarDetalle(detalleEntrada);
         return ResponseEntity.ok(savedDetalle);
     }
 
-    //obtener ultimo is de entrada
+    // obtener ultimo is de entrada
     @GetMapping("/ultimoIdEntrada")
-    public int obtenerUltimoId(){
+    public int obtenerUltimoId() {
         return serviceDetalleEntrada.obtenerUltimoIdEntrada();
     }
 }

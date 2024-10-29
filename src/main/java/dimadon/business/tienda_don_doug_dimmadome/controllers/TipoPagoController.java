@@ -21,12 +21,12 @@ public class TipoPagoController {
     @Autowired
     ServiceTipoPago serviceTipoPago;
 
-    @GetMapping()
+    @GetMapping("/obtener")
     public ArrayList<TipoPago> obtenerTipoPago() {
         return serviceTipoPago.obtnerTipoPago();
     }
 
-    @PostMapping()
+    @PostMapping("/insertar")
     public TipoPago guardarTipoPago(@RequestBody TipoPago tipoPago) {
         return this.serviceTipoPago.insertarTipoPago(tipoPago);
     }

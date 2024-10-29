@@ -26,12 +26,12 @@ public class ClienteController {
     @Autowired
     private ServiceCliente serviceCliente;
 
-    @GetMapping("/listar")
+    @GetMapping("/obtener")
     public ArrayList<Cliente> obtenerClientes() {
         return serviceCliente.obtenerClientes();
     }
 
-    @PostMapping("/guardar")
+    @PostMapping("/insertar")
     public Cliente guardarCliente(@RequestBody Cliente cliente) {
         return serviceCliente.guardarCliente(cliente);
     }

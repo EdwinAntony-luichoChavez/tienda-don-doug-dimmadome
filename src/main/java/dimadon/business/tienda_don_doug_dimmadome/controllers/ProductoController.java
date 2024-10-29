@@ -27,12 +27,12 @@ public class ProductoController {
     @Autowired
     ServiceProducto serviceProducto;
 
-    @GetMapping()
+    @GetMapping("/obtener")
     public ArrayList<Producto> obtenerProducto() {
         return serviceProducto.obtenerProducto();
     }
 
-    @PostMapping()
+    @PostMapping("/insertar")
     public Producto guardarProducto(@RequestBody Producto producto) {
         return this.serviceProducto.insertarProducto(producto);
     }

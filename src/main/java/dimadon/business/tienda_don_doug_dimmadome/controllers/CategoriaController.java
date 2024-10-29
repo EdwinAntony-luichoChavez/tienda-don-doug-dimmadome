@@ -21,12 +21,12 @@ public class CategoriaController {
     @Autowired
     ServiceCategoria serviceCategoria;
 
-    @GetMapping()
+    @GetMapping("/obtener")
     public ArrayList<Categoria> obtenerCategoria() {
         return serviceCategoria.obtnerCategoria();
     }
 
-    @PostMapping()
+    @PostMapping("/insertar")
     public Categoria guardarCategoria(@RequestBody Categoria categoria) {
         return this.serviceCategoria.insertarCategoria(categoria);
     }

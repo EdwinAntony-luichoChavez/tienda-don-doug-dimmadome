@@ -21,12 +21,12 @@ public class TipoUsuarioController {
     @Autowired
     ServiceTipoUsuario serviceTipoUsuario;
 
-    @GetMapping()
+    @GetMapping("/obtener")
     public ArrayList<TipoUsuario> obtenerTipoUsuario() {
         return serviceTipoUsuario.obtnerTipoUsuario();
     }
 
-    @PostMapping()
+    @PostMapping("/insertar")
     public TipoUsuario guardarTipoUsuario(@RequestBody TipoUsuario tipoUsuario) {
         return this.serviceTipoUsuario.insertarTipoUsuario(tipoUsuario);
     }
