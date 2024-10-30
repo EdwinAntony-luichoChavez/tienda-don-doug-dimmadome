@@ -3,6 +3,7 @@ package dimadon.business.tienda_don_doug_dimmadome.services;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -21,8 +22,11 @@ import dimadon.business.tienda_don_doug_dimmadome.entities.Cliente;
 @Service
 public class ReniecService {
 
-    private final RestTemplate restTemplate;
-    private final RepositoryCliente clienteRepository;
+    @Autowired
+    RestTemplate restTemplate;
+
+    @Autowired
+    RepositoryCliente clienteRepository;
 
     @Value("${reniec.api.url}")
     private String reniecApiUrl;
@@ -30,6 +34,7 @@ public class ReniecService {
     @Value("${reniec.api.token}")
     private String apiToken;
 
+    @Autowired
     public ReniecService(RestTemplate restTemplate, RepositoryCliente clienteRepository) {
         this.restTemplate = restTemplate;
         this.clienteRepository = clienteRepository;
